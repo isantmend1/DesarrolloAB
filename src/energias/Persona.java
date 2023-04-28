@@ -1,3 +1,5 @@
+package local.cdm.energias;
+
 
 import com.sun.jdi.Value;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class Persona implements Energetico {
     public Integer hacerTareas() {
         Integer n = 0;
         for (Accion t : this.tareas) {
-            while (this.energiaActual > 0) {
+            if (this.energiaActual > 0) {
                 this.tareas.remove(t);
                 this.energiaActual--;
                 n++;
